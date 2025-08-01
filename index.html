@@ -12,27 +12,7 @@
 <body>
   <div id="header"></div>
   
-  <!-- Hero Section -->
   <main>
-    <section class="hero">
-      <div class="hero-slideshow">
-        <div class="hero-slide active" style="background-image: url('images/hero1.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('images/hero2.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('images/hero3.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('images/hero.jpg')"></div>
-      </div>
-      <div class="hero-overlay"></div>
-      <div class="hero-text">
-        삽교호에서 경험하는 특별한 숙박<br>
-        <span style="color: var(--accent-cyan); font-weight: 800;">나에게 맞는 공간</span>을 선택하세요
-      </div>
-      <div class="hero-indicators">
-        <button class="indicator active" data-slide="0"></button>
-        <button class="indicator" data-slide="1"></button>
-        <button class="indicator" data-slide="2"></button>
-        <button class="indicator" data-slide="3"></button>
-      </div>
-    </section>
 
     <!-- Pension Selection Section -->
     <section class="pension-selection">
@@ -40,30 +20,7 @@
       <p class="section-subtitle">삽교호의 아름다운 자연 속에서 다양한 스타일의 숙박을 경험해보세요</p>
       
       <div class="pension-cards">
-        <div class="pension-card sapgyoho-pension">
-          <div class="pension-image">
-            <img src="images/hero1.jpg" alt="삽교호 펜션" />
-            <div class="pension-badge">펜션</div>
-          </div>
-          <div class="pension-content">
-            <h3>삽교호 펜션</h3>
-            <p class="pension-subtitle">프리미엄 펜션 스테이</p>
-            <div class="pension-features">
-              <div class="feature-tag">💛 노란객실 (3-4인)</div>
-              <div class="feature-tag">❤️ 빨간객실 (5-8인)</div>
-              <div class="feature-tag">🤍 하얀객실 (10-15인)</div>
-              <div class="feature-tag">🏊‍♂️ 수영장</div>
-              <div class="feature-tag">🎤 노래방</div>
-              <div class="feature-tag">🍖 바베큐장</div>
-            </div>
-            <div class="pension-contact">
-              <span>📞 010-8301-4281</span>
-            </div>
-            <a href="sapgyoho-pension.html" class="pension-btn">삽교호 펜션 둘러보기</a>
-          </div>
-        </div>
-        
-        <div class="pension-card sapgyo-house">
+        <a href="sapgyo-house.html" class="pension-card sapgyo-house">
           <div class="pension-image">
             <img src="images/hero2.jpg" alt="삽교 하우스" />
             <div class="pension-badge house">하우스</div>
@@ -82,9 +39,32 @@
             <div class="pension-contact">
               <span>📞 010-5754-8549</span>
             </div>
-            <a href="sapgyo-house.html" class="pension-btn">삽교 하우스 둘러보기</a>
+            <div class="pension-btn">삽교 하우스 둘러보기</div>
           </div>
-        </div>
+        </a>
+        
+        <a href="sapgyoho-pension.html" class="pension-card sapgyoho-pension">
+          <div class="pension-image">
+            <img src="images/hero1.jpg" alt="삽교호 펜션" />
+            <div class="pension-badge">펜션</div>
+          </div>
+          <div class="pension-content">
+            <h3>삽교호 펜션</h3>
+            <p class="pension-subtitle">프리미엄 펜션 스테이</p>
+            <div class="pension-features">
+              <div class="feature-tag">💛 노란객실 (3-4인)</div>
+              <div class="feature-tag">❤️ 빨간객실 (5-8인)</div>
+              <div class="feature-tag">🤍 하얀객실 (10-15인)</div>
+              <div class="feature-tag">🏊‍♂️ 수영장</div>
+              <div class="feature-tag">🎤 노래방</div>
+              <div class="feature-tag">🍖 바베큐장</div>
+            </div>
+            <div class="pension-contact">
+              <span>📞 010-8301-4281</span>
+            </div>
+            <div class="pension-btn">삽교호 펜션 둘러보기</div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -158,39 +138,10 @@
       });
     }, observerOptions);
 
-    // Hero 슬라이드쇼
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const totalSlides = slides.length;
-
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      indicators.forEach(indicator => indicator.classList.remove('active'));
-      
-      slides[index].classList.add('active');
-      indicators[index].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      showSlide(currentSlide);
-    }
-
-    // 자동 슬라이드 (4초마다)
-    setInterval(nextSlide, 4000);
-
-    // 인디케이터 클릭 이벤트
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentSlide = index;
-        showSlide(currentSlide);
-      });
-    });
 
     // 페이지 로드 후 애니메이션 적용
     document.addEventListener('DOMContentLoaded', () => {
-      const animateElements = document.querySelectorAll('.menu-card, .feature-item, .cta-content');
+      const animateElements = document.querySelectorAll('.pension-card, .feature-item, .cta-content');
       animateElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';

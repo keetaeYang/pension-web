@@ -95,7 +95,7 @@ a {
 
 /* Pension Selection Styles */
 .pension-selection {
-  padding: var(--space-3xl) var(--space-md);
+  padding: calc(80px + var(--space-3xl)) var(--space-md) var(--space-3xl);
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   text-align: center;
 }
@@ -123,6 +123,9 @@ a {
   box-shadow: var(--shadow-lg);
   transition: all var(--transition-base);
   border: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .pension-card:hover {
@@ -192,9 +195,10 @@ a {
 }
 
 .pension-subtitle {
-  color: var(--neutral-600);
+  color: var(--neutral-700);
   font-size: 1rem;
   margin-bottom: var(--space-lg);
+  font-weight: 500;
 }
 
 .pension-features {
@@ -206,11 +210,11 @@ a {
 
 .feature-tag {
   background: var(--neutral-200);
-  color: var(--neutral-700);
+  color: var(--neutral-800);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-md);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .pension-contact {
@@ -222,8 +226,8 @@ a {
 }
 
 .pension-contact span {
-  font-weight: 600;
-  color: var(--neutral-800);
+  font-weight: 700;
+  color: var(--neutral-900);
   font-size: 1.1rem;
 }
 
