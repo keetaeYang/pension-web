@@ -3,29 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>우리 펜션 갤러리</title>
+  <title>우리 펜션</title>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #f5f5f5;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; font-family: sans-serif; scroll-behavior: smooth; }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 1rem 2rem;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h1 {
-      margin-top: 30px;
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    .hero {
+      height: 100vh;
+      background: url('images/hero.jpg') center center / cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 1px 1px 3px #000;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
     }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
     }
     .gallery img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: transform 0.3s;
     }
     .gallery img:hover {
@@ -34,11 +58,32 @@
   </style>
 </head>
 <body>
-  <h1>우리 펜션 갤러리</h1>
+
+<header>
+  <div>🌿 우리 펜션</div>
+  <nav>
+    <a href="#intro">소개</a>
+    <a href="#gallery">갤러리</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>자연 속 힐링, 우리 펜션에 오신 걸 환영합니다</h1>
+</div>
+
+<section id="intro">
+  <h2>펜션 소개</h2>
+  <p>맑은 공기, 깨끗한 자연, 편안한 휴식 공간. <br> 가족과 친구들과 함께하는 특별한 하루를 위한 공간입니다.</p>
+</section>
+
+<section id="gallery">
+  <h2>갤러리</h2>
   <div class="gallery">
-    <img src="images/photo1.jpg" alt="갤러리 이미지 1">
-    <img src="images/photo2.jpg" alt="갤러리 이미지 2">
-    <img src="images/photo3.jpg" alt="갤러리 이미지 3">
+    <img src="images/photo1.jpg" alt="갤러리1" />
+    <img src="images/photo2.jpg" alt="갤러리2" />
+    <img src="images/photo3.jpg" alt="갤러리3" />
   </div>
+</section>
+
 </body>
 </html>
