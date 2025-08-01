@@ -3,31 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNS 후기 - 삽교호 펜션</title>
-  <style>
-    .page-container { padding-top: 80px; }
-    section { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .btn { display: inline-block; padding: 10px 20px; background: #7ca328; color: white; text-decoration: none; border-radius: 6px; margin-right: 10px; }
-  </style>
+  <title>커뮤니티</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="header"></div>
-
-  <div class="page-container">
-    <section>
-      <h2>SNS 후기 공유</h2>
-      <p>고객님의 생생한 후기를 인스타그램, 블로그에 공유해주세요!</p>
-      <a class="btn" href="https://instagram.com" target="_blank">📷 인스타그램</a>
-      <a class="btn" href="https://blog.naver.com" target="_blank">✏️ 네이버 블로그</a>
-    </section>
-  </div>
-
+  <main class="page-container">
+    <h2>SNS 후기</h2>
+    <p>방문해주신 고객님들의 생생한 후기를 만나보세요.</p>
+  </main>
   <div id="footer"></div>
   <script>
-    fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
-    fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+    fetch('components/header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
   </script>
-  <a href="index.html" class="back-to-home">홈으로</a>
 </body>
 </html>
