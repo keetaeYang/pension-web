@@ -2,12 +2,12 @@
 
 /* CSS Variables - Design Tokens */
 :root {
-  /* Colors - Natural & Modern Palette */
-  --primary-green: #2D7D57;
-  --primary-light: #4A9B7A;
-  --primary-dark: #1A5D3C;
-  --accent-gold: #D4AF37;
-  --accent-light: #F4E4A6;
+  /* Colors - Ocean & Amusement Theme Palette */
+  --primary-blue: #2563EB;
+  --primary-light: #60A5FA;
+  --primary-dark: #1D4ED8;
+  --accent-cyan: #06B6D4;
+  --accent-light: #A5F3FC;
   
   --neutral-100: #FFFFFF;
   --neutral-200: #F8F9FA;
@@ -113,7 +113,7 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-green), var(--primary-light));
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
   color: var(--neutral-100);
   box-shadow: var(--shadow-md);
 }
@@ -121,17 +121,17 @@ a {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
 }
 
 .btn-secondary {
   background: var(--neutral-100);
-  color: var(--primary-green);
-  border: 2px solid var(--primary-green);
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
 }
 
 .btn-secondary:hover {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: var(--neutral-100);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -170,7 +170,7 @@ a {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   text-decoration: none;
   position: relative;
   display: flex;
@@ -185,7 +185,7 @@ a {
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-light));
   border-radius: var(--radius-sm);
   transition: width var(--transition-base);
 }
@@ -225,7 +225,7 @@ a {
 }
 
 .nav-menu a:hover {
-  color: var(--primary-green);
+  color: var(--primary-blue);
   background: var(--neutral-200);
   transform: translateY(-2px);
 }
@@ -244,7 +244,7 @@ a {
 .mobile-menu-toggle span {
   width: 25px;
   height: 3px;
-  background: var(--primary-green);
+  background: var(--primary-blue);
   border-radius: var(--radius-sm);
   transition: all var(--transition-base);
 }
@@ -299,7 +299,7 @@ a {
 }
 
 .mobile-nav a:hover {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: var(--neutral-100);
 }
 
@@ -310,11 +310,6 @@ body.menu-open {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(
-    135deg,
-    rgba(45, 125, 87, 0.8),
-    rgba(74, 155, 122, 0.6)
-  ), url('images/hero-collage.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,16 +318,73 @@ body.menu-open {
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+/* Hero Slideshow */
+.hero-slideshow {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.7),
+    rgba(6, 182, 212, 0.5)
+  );
   z-index: 1;
 }
+
+/* Hero Indicators */
+.hero-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active,
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
+}
+
 
 .hero-text {
   color: var(--neutral-100);
@@ -373,7 +425,7 @@ body.menu-open {
 .menu-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-2xl);
   position: relative;
 }
@@ -386,7 +438,7 @@ body.menu-open {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-light));
   border-radius: var(--radius-sm);
 }
 
@@ -446,7 +498,7 @@ body.menu-open {
 .menu-card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-sm);
 }
 
@@ -490,7 +542,7 @@ body.menu-open {
 .room-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-md);
 }
 
@@ -531,7 +583,7 @@ body.menu-open {
 .form-header h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-md);
 }
 
@@ -543,7 +595,7 @@ body.menu-open {
 
 /* Selected Room Display */
 .selected-room {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-green));
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-blue));
   color: var(--neutral-100);
   padding: var(--space-xl);
   border-radius: var(--radius-xl);
@@ -598,7 +650,7 @@ body.menu-open {
 .label-text {
   display: block;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-sm);
   font-size: 1rem;
 }
@@ -620,7 +672,7 @@ body.menu-open {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-green);
+  border-color: var(--primary-blue);
   box-shadow: 0 0 0 3px rgba(45, 125, 87, 0.1);
   background: var(--neutral-100);
 }
@@ -651,7 +703,7 @@ body.menu-open {
 .contact-method h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-lg);
 }
 
@@ -675,7 +727,7 @@ body.menu-open {
 }
 
 .radio-option:hover {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: var(--neutral-100);
 }
 
@@ -693,8 +745,8 @@ body.menu-open {
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom {
-  border-color: var(--primary-green);
-  background: var(--primary-green);
+  border-color: var(--primary-blue);
+  background: var(--primary-blue);
 }
 
 .radio-option input[type="radio"]:checked + .radio-custom::after {
@@ -718,7 +770,7 @@ body.menu-open {
 }
 
 .radio-option:hover input[type="radio"]:checked + .radio-custom::after {
-  background: var(--primary-green);
+  background: var(--primary-blue);
 }
 
 /* Form Actions */
@@ -773,7 +825,7 @@ body.menu-open {
 .promotion-card h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-lg);
   display: flex;
   align-items: center;
@@ -795,7 +847,7 @@ body.menu-open {
 }
 
 .contact-item a {
-  color: var(--primary-green);
+  color: var(--primary-blue);
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -840,7 +892,7 @@ body.menu-open {
 
 .info-value {
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
 }
 
 /* Promotion Items */
@@ -860,7 +912,7 @@ body.menu-open {
 
 .promotion-title {
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
 }
 
 .promotion-desc {
@@ -952,7 +1004,7 @@ body.menu-open {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   transition: all var(--transition-base);
   min-width: 140px;
   justify-content: center;
@@ -960,7 +1012,7 @@ body.menu-open {
 
 .social-links a:hover {
   transform: translateY(-3px);
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: var(--neutral-100);
   box-shadow: var(--shadow-lg);
 }
@@ -972,7 +1024,7 @@ body.menu-open {
 
 /* Enhanced Footer */
 .site-footer {
-  background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
   color: var(--neutral-100);
   margin-top: var(--space-3xl);
   position: relative;
@@ -1019,7 +1071,7 @@ body.menu-open {
   left: 0;
   width: 30px;
   height: 2px;
-  background: var(--accent-gold);
+  background: var(--accent-cyan);
   border-radius: var(--radius-sm);
 }
 
@@ -1108,7 +1160,7 @@ body.menu-open {
 }
 
 .social-icons a:hover {
-  background: var(--accent-gold);
+  background: var(--accent-cyan);
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -1154,7 +1206,7 @@ body.menu-open {
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   text-align: center;
   margin-bottom: var(--space-2xl);
   position: relative;
@@ -1168,7 +1220,7 @@ h1::after {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-light));
   border-radius: var(--radius-sm);
 }
 
@@ -1308,7 +1360,7 @@ h1::after {
 
 .card-arrow {
   font-size: 1.5rem;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   opacity: 0;
   transform: translateX(-10px);
   transition: all var(--transition-base);
@@ -1337,7 +1389,7 @@ h1::after {
 .about-content h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   text-align: center;
   margin-bottom: var(--space-2xl);
   position: relative;
@@ -1351,7 +1403,7 @@ h1::after {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-light));
   border-radius: var(--radius-sm);
 }
 
@@ -1380,7 +1432,7 @@ h1::after {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-green), var(--primary-light));
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-light));
   transform: scaleX(0);
   transition: transform var(--transition-base);
 }
@@ -1404,7 +1456,7 @@ h1::after {
 .feature-item h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-md);
 }
 
@@ -1418,7 +1470,7 @@ h1::after {
 .cta-section {
   background: linear-gradient(
     135deg,
-    var(--primary-green),
+    var(--primary-blue),
     var(--primary-light)
   );
   padding: var(--space-3xl) 0;
@@ -1483,7 +1535,7 @@ h1::after {
 
 .cta-buttons .btn-secondary:hover {
   background: var(--neutral-100);
-  color: var(--primary-green);
+  color: var(--primary-blue);
   border-color: var(--neutral-100);
 }
 
@@ -1600,7 +1652,7 @@ h1::after {
 }
 
 .room-card.featured {
-  border: 2px solid var(--accent-gold);
+  border: 2px solid var(--accent-cyan);
 }
 
 .room-card.romantic {
@@ -1633,7 +1685,7 @@ h1::after {
   position: absolute;
   top: var(--space-md);
   left: var(--space-md);
-  background: var(--accent-gold);
+  background: var(--accent-cyan);
   color: var(--neutral-900);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-xl);
@@ -1702,7 +1754,7 @@ h1::after {
 .room-header h3 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin: 0;
 }
 
@@ -1747,7 +1799,7 @@ h1::after {
 }
 
 .amenity:hover {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: var(--neutral-100);
 }
 
@@ -1768,7 +1820,7 @@ h1::after {
 .price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
 }
 
 .price-unit {
@@ -1793,7 +1845,7 @@ h1::after {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-2xl);
   position: relative;
 }
@@ -1806,7 +1858,7 @@ h1::after {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-light));
   border-radius: var(--radius-sm);
 }
 
@@ -1833,7 +1885,7 @@ h1::after {
 .feature-category h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-lg);
   display: flex;
   align-items: center;
@@ -1859,18 +1911,18 @@ h1::after {
   position: absolute;
   left: 0;
   top: var(--space-sm);
-  color: var(--primary-green);
+  color: var(--primary-blue);
   font-weight: bold;
 }
 
 .feature-category li:hover {
-  color: var(--primary-green);
+  color: var(--primary-blue);
   transform: translateX(5px);
 }
 
 /* Booking CTA */
 .booking-cta {
-  background: linear-gradient(135deg, var(--primary-green), var(--primary-light));
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
   padding: var(--space-3xl);
   border-radius: var(--radius-2xl);
   text-align: center;
@@ -2005,7 +2057,7 @@ h1::after {
 .about-hero-content h2 {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-lg);
 }
 
@@ -2031,7 +2083,7 @@ h1::after {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-2xl);
 }
 
@@ -2047,7 +2099,7 @@ h1::after {
 .transport-info h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-md);
 }
 
@@ -2075,7 +2127,7 @@ h1::after {
 }
 
 .intro-cta {
-  background: linear-gradient(135deg, var(--primary-green), var(--primary-light));
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
   padding: var(--space-3xl);
   border-radius: var(--radius-2xl);
   text-align: center;
@@ -2165,7 +2217,7 @@ h1::after {
 .social-content h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-xs);
 }
 
@@ -2183,7 +2235,7 @@ h1::after {
 
 .social-arrow {
   font-size: 1.5rem;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   opacity: 0.7;
   transition: all var(--transition-base);
 }
@@ -2202,7 +2254,7 @@ h1::after {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-2xl);
   position: relative;
 }
@@ -2215,7 +2267,7 @@ h1::after {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-light));
   border-radius: var(--radius-sm);
 }
 
@@ -2263,7 +2315,7 @@ h1::after {
 
 .author-name {
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
 }
 
 .review-date {
@@ -2283,7 +2335,7 @@ h1::after {
 .share-content h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-lg);
 }
 
@@ -2301,7 +2353,7 @@ h1::after {
 .hashtag-section h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-blue);
   margin-bottom: var(--space-md);
 }
 
@@ -2314,7 +2366,7 @@ h1::after {
 }
 
 .hashtag {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: var(--neutral-100);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-xl);
