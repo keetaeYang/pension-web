@@ -183,75 +183,41 @@ a {
 }
 
 .pension-content {
-  padding: var(--space-xl);
-  text-align: left;
+  padding: var(--space-lg);
+  text-align: center;
 }
 
 .pension-content h3 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: var(--neutral-800);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 
-.pension-subtitle {
-  color: var(--neutral-700);
-  font-size: 1rem;
-  margin-bottom: var(--space-lg);
-  font-weight: 500;
-}
-
-.pension-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-}
-
-.feature-tag {
-  background: var(--neutral-200);
-  color: var(--neutral-800);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-md);
-  font-size: 0.875rem;
-  font-weight: 600;
-}
 
 .pension-contact {
-  margin-bottom: var(--space-lg);
-  padding: var(--space-md);
-  background: var(--neutral-200);
-  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: var(--radius-lg);
   text-align: center;
+  border: 2px solid rgba(37, 99, 235, 0.2);
+}
+
+.sapgyo-house .pension-contact {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.2);
 }
 
 .pension-contact span {
   font-weight: 700;
-  color: var(--neutral-900);
-  font-size: 1.1rem;
+  color: var(--primary-blue);
+  font-size: 1.2rem;
 }
 
-.pension-btn {
-  display: block;
-  width: 100%;
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
-  color: var(--neutral-100);
-  text-align: center;
-  padding: var(--space-md);
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  transition: all var(--transition-base);
-  text-decoration: none;
+.sapgyo-house .pension-contact span {
+  color: var(--accent-cyan);
 }
 
-.sapgyo-house .pension-btn {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-light));
-}
-
-.pension-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
 
 /* Modern Button System */
 .btn {
