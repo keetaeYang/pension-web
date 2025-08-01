@@ -93,6 +93,162 @@ a {
   transition: all var(--transition-base);
 }
 
+/* Pension Selection Styles */
+.pension-selection {
+  padding: var(--space-3xl) var(--space-md);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  text-align: center;
+}
+
+.pension-selection h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-heading);
+}
+
+.pension-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-2xl);
+  max-width: 1000px;
+  margin: var(--space-2xl) auto 0;
+}
+
+.pension-card {
+  background: var(--neutral-100);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.pension-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.sapgyoho-pension {
+  border-color: var(--primary-blue);
+}
+
+.sapgyoho-pension:hover {
+  border-color: var(--primary-light);
+}
+
+.sapgyo-house {
+  border-color: var(--accent-cyan);
+}
+
+.sapgyo-house:hover {
+  border-color: var(--accent-light);
+}
+
+.pension-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.pension-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.pension-card:hover .pension-image img {
+  transform: scale(1.05);
+}
+
+.pension-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: var(--primary-blue);
+  color: var(--neutral-100);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.pension-badge.house {
+  background: var(--accent-cyan);
+}
+
+.pension-content {
+  padding: var(--space-xl);
+  text-align: left;
+}
+
+.pension-content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-xs);
+}
+
+.pension-subtitle {
+  color: var(--neutral-600);
+  font-size: 1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.pension-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.feature-tag {
+  background: var(--neutral-200);
+  color: var(--neutral-700);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.pension-contact {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--neutral-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.pension-contact span {
+  font-weight: 600;
+  color: var(--neutral-800);
+  font-size: 1.1rem;
+}
+
+.pension-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+  color: var(--neutral-100);
+  text-align: center;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.sapgyo-house .pension-btn {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-light));
+}
+
+.pension-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 /* Modern Button System */
 .btn {
   display: inline-flex;
@@ -135,6 +291,759 @@ a {
   color: var(--neutral-100);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.btn.large {
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.1rem;
+}
+
+/* Pension Hero Styles */
+.pension-hero, .house-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+}
+
+.pension-badge-hero {
+  background: var(--primary-blue);
+  color: var(--neutral-100);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: var(--space-md);
+  display: inline-block;
+}
+
+.pension-badge-hero.house {
+  background: var(--accent-cyan);
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--neutral-100);
+  margin-bottom: var(--space-sm);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-xl);
+}
+
+.hero-contact {
+  margin-top: var(--space-xl);
+}
+
+.contact-btn {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--neutral-100);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.contact-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.contact-btn.house {
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+/* Room Types Section */
+.room-types-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: var(--neutral-100);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.room-types-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-md);
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.room-card {
+  background: var(--neutral-100);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  border: 3px solid transparent;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.yellow-room {
+  border-color: #FCD34D;
+}
+
+.yellow-room:hover {
+  border-color: #F59E0B;
+  transform: translateY(-5px);
+}
+
+.red-room {
+  border-color: #FCA5A5;
+}
+
+.red-room:hover {
+  border-color: #EF4444;
+  transform: translateY(-5px);
+}
+
+.white-room {
+  border-color: #E5E7EB;
+}
+
+.white-room:hover {
+  border-color: #9CA3AF;
+  transform: translateY(-5px);
+}
+
+.room-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.room-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-sm);
+}
+
+.room-capacity {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--neutral-200);
+  border-radius: var(--radius-md);
+  display: inline-block;
+}
+
+.room-description {
+  text-align: left;
+  margin-bottom: var(--space-lg);
+}
+
+.room-description p {
+  font-weight: 600;
+  color: var(--neutral-700);
+  margin-bottom: var(--space-sm);
+}
+
+.room-description ul {
+  list-style: none;
+  padding: 0;
+}
+
+.room-description li {
+  padding: var(--space-xs) 0;
+  color: var(--neutral-600);
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.room-description li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+}
+
+.room-features .feature {
+  background: var(--neutral-200);
+  color: var(--neutral-700);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.pricing-info {
+  margin-top: var(--space-2xl);
+  text-align: center;
+}
+
+.pricing-card {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+  color: var(--neutral-100);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  display: inline-block;
+  min-width: 300px;
+}
+
+.pricing-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Facilities Section */
+.facilities-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.facilities-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-2xl);
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl);
+}
+
+.facility-card {
+  background: var(--neutral-100);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.facility-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.facility-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.facility-details p {
+  color: var(--neutral-600);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.facility-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+
+.info-value {
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+.notice {
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+  text-align: center;
+  margin-top: var(--space-md);
+  font-style: italic;
+}
+
+/* Location Section */
+.location-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: var(--neutral-100);
+}
+
+.location-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-2xl);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.location-item {
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--neutral-100);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.location-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.location-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.location-item h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-sm);
+}
+
+.location-item p {
+  color: var(--neutral-600);
+}
+
+/* Reservation Section */
+.reservation-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+  color: var(--neutral-100);
+  text-align: center;
+}
+
+.reservation-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-2xl);
+}
+
+.reservation-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.info-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.contact-section {
+  margin-top: var(--space-2xl);
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.contact-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.15);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-number.house {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* House-specific Styles */
+.house-features-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: var(--neutral-100);
+}
+
+.house-features-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-md);
+}
+
+.house-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.house-card {
+  background: var(--neutral-100);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  border: 3px solid var(--accent-cyan);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.house-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-light);
+  box-shadow: var(--shadow-xl);
+}
+
+.house-card.main-feature {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  margin: 0 auto;
+  border-color: var(--primary-blue);
+}
+
+.house-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.house-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-md);
+}
+
+.house-description {
+  text-align: left;
+}
+
+.house-description p {
+  font-weight: 600;
+  color: var(--neutral-700);
+  margin-bottom: var(--space-sm);
+}
+
+.house-description ul {
+  list-style: none;
+  padding: 0;
+}
+
+.house-description li {
+  padding: var(--space-xs) 0;
+  color: var(--neutral-600);
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.house-description li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+/* Comfort Comparison Section */
+.comfort-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.comfort-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-2xl);
+}
+
+.comfort-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.comfort-item {
+  background: var(--neutral-100);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.comfort-item.highlight {
+  border: 3px solid var(--accent-cyan);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(165, 243, 252, 0.05));
+}
+
+.comfort-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.comfort-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-md);
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.comparison-list li {
+  padding: var(--space-xs) 0;
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.comparison-list.negative li:before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: bold;
+}
+
+.comparison-list.positive li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+.vs-divider {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--neutral-500);
+  background: var(--neutral-200);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Perfect For Section */
+.perfect-for-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: var(--neutral-100);
+}
+
+.perfect-for-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-2xl);
+}
+
+.perfect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+}
+
+.perfect-card {
+  background: var(--neutral-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all var(--transition-base);
+}
+
+.perfect-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-lg);
+}
+
+.perfect-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.perfect-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-sm);
+}
+
+.perfect-card p {
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+/* Amenities Section */
+.amenities-section {
+  padding: var(--space-3xl) var(--space-md);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.amenities-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-2xl);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+}
+
+.amenity-category {
+  background: var(--neutral-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.amenity-category h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.amenity-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.amenity-category li {
+  padding: var(--space-xs) 0;
+  color: var(--neutral-600);
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.amenity-category li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+/* House-specific sections */
+.house-location {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(165, 243, 252, 0.05));
+}
+
+.house-contact {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-light));
+}
+
+.reservation-section.house-contact h2 {
+  color: var(--neutral-100);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pension-cards {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .pension-card {
+    margin: 0 var(--space-md);
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .room-grid, .house-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .comfort-comparison {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .vs-divider {
+    transform: rotate(90deg);
+  }
+  
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Enhanced Header Styles */
