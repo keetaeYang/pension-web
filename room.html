@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>객실 안내 - 우리 펜션</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header {
+      background: #7ca328;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .room-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .room {
+      background: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .room img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .room h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .room p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+      color: #7ca328;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>객실 안내</h1>
+</header>
+
+<div class="room-section">
+
+  <div class="room">
+    <img src="images/room1.jpg" alt="패밀리룸">
+    <h2>패밀리룸</h2>
+    <p>가족 단위 여행객을 위한 넓은 공간, 독립된 주방과 화장실이 포함되어 있습니다.<br>최대 6인 이용 가능. ₩120,000 / 1박</p>
+  </div>
+
+  <div class="room">
+    <img src="images/room2.jpg" alt="커플룸">
+    <h2>커플룸</h2>
+    <p>조용하고 아늑한 공간. 한적한 자연 속에서 둘만의 시간을 보내기 좋은 객실입니다.<br>최대 2인 이용 가능. ₩80,000 / 1박</p>
+  </div>
+
+</div>
+
+<a class="back-link" href="index.html">← 메인으로 돌아가기</a>
+
+</body>
+</html>
