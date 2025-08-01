@@ -11,7 +11,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html { height: 100%; font-family: sans-serif; scroll-behavior: smooth; }
-    
+
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -49,7 +49,7 @@
 
     section {
       padding: 80px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -76,6 +76,37 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
+
+    .menu-section {
+      background: #f5f5f5;
+      padding: 40px 0;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .menu-item {
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .menu-item img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .menu-item span {
+      display: block;
+      color: #7ca328;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -91,6 +122,24 @@
 <div class="hero">
   <h1>자연 속 힐링, 우리 펜션에 오신 걸 환영합니다</h1>
 </div>
+
+<!-- 메뉴 섹션 -->
+<section class="menu-section">
+  <div class="menu-container">
+    <a href="room.html" class="menu-item">
+      <img src="images/room-icon.png" alt="객실안내">
+      객실안내<br><span>Room</span>
+    </a>
+    <a href="reservation.html" class="menu-item">
+      <img src="images/reservation-icon.png" alt="예약안내">
+      예약안내<br><span>Reservation</span>
+    </a>
+    <a href="community.html" class="menu-item">
+      <img src="images/community-icon.png" alt="커뮤니티">
+      커뮤니티<br><span>Community</span>
+    </a>
+  </div>
+</section>
 
 <section id="intro">
   <h2>펜션 소개</h2>
