@@ -1,9 +1,31 @@
-<header style="background: #7ca328; color: white; padding: 20px; text-align: center;">
-  <div style="font-size: 1.5rem;">🌿 삽교호 펜션</div>
-  <nav style="margin-top: 10px;">
-    <a href="intro.html" style="color:white; margin: 0 15px; text-decoration: none; font-weight: bold;">소개</a>
-    <a href="room.html" style="color:white; margin: 0 15px; text-decoration: none; font-weight: bold;">객실</a>
-    <a href="reservation.html" style="color:white; margin: 0 15px; text-decoration: none; font-weight: bold;">예약</a>
-    <a href="community.html" style="color:white; margin: 0 15px; text-decoration: none; font-weight: bold;">SNS</a>
+<header style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  z-index: 999;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+">
+
+  <!-- 왼쪽 로고 + 타이틀 -->
+  <div style="display: flex; align-items: center;">
+    <img src="images/logo.png" alt="삽교호 펜션 로고" style="height: 40px; margin-right: 12px;">
+    <span style="font-size: 1.3rem; font-weight: bold; color: #333;">삽교호펜션</span>
+  </div>
+
+  <!-- 오른쪽 네비게이션 -->
+  <nav>
+    <a href="intro.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">소개</a>
+    <a href="room.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">객실</a>
+    <a href="reservation.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">예약</a>
+    <a href="community.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">SNS</a>
   </nav>
+
 </header>
