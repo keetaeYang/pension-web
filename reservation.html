@@ -1,1 +1,25 @@
-<!DOCTYPE html><html lang='ko'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>예약 안내</title><link rel='stylesheet' href='style.css'></head><body><div id='header'></div><main class='page-container'><h2>예약 안내</h2><p>전화 또는 SNS를 통해 예약이 가능합니다.</p></main><div id='footer'></div><script>fetch('components/header.html').then(res=>res.text()).then(data=>document.getElementById('header').innerHTML=data);fetch('components/footer.html').then(res=>res.text()).then(data=>document.getElementById('footer').innerHTML=data);</script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예약 안내</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="page-container">
+    <h2>예약 안내</h2>
+    <p>예약은 전화 또는 SNS를 통해 가능합니다.</p>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('components/header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>
