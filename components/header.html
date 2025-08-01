@@ -1,31 +1,15 @@
-<header style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 999;
-  padding: 10px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-">
-
-  <!-- 왼쪽 로고 + 타이틀 -->
-  <div style="display: flex; align-items: center;">
-    <img src="images/logo.png" alt="삽교호 펜션 로고" style="height: 40px; margin-right: 12px;">
-    <span style="font-size: 1.3rem; font-weight: bold; color: #333;">삽교호펜션</span>
+<!-- components/header.html -->
+<header class="main-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="삽교호펜션 로고" />
+      <span>삽교호펜션</span>
+    </a>
+    <nav class="nav-menu">
+      <a href="intro.html">소개</a>
+      <a href="room.html">객실</a>
+      <a href="reservation.html">예약</a>
+      <a href="community.html">SNS</a>
+    </nav>
   </div>
-
-  <!-- 오른쪽 네비게이션 -->
-  <nav>
-    <a href="intro.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">소개</a>
-    <a href="room.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">객실</a>
-    <a href="reservation.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">예약</a>
-    <a href="community.html" style="margin-left: 20px; text-decoration: none; color: #333; font-weight: 500;">SNS</a>
-  </nav>
-
 </header>
