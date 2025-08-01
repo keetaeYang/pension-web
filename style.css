@@ -2288,9 +2288,12 @@ h1::after {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
   margin-top: var(--space-3xl);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-item {
@@ -2343,6 +2346,39 @@ h1::after {
   color: var(--neutral-600);
   line-height: 1.7;
   font-size: 0.95rem;
+}
+
+/* Free badge for pool feature */
+.free-badge {
+  background: linear-gradient(135deg, #10B981, #34D399);
+  color: var(--neutral-100);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: var(--space-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Special styling for pool and BBQ features */
+.pool-feature {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(52, 211, 153, 0.05));
+  border: 2px solid rgba(16, 185, 129, 0.2);
+}
+
+.bbq-feature {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.05), rgba(251, 191, 36, 0.05));
+  border: 2px solid rgba(251, 146, 60, 0.2);
+}
+
+.pool-feature:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  transform: translateY(-5px);
+}
+
+.bbq-feature:hover {
+  border-color: rgba(251, 146, 60, 0.4);
+  transform: translateY(-5px);
 }
 
 /* CTA Section */
