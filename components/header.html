@@ -1,7 +1,24 @@
 <header class="site-header">
   <div class="header-container">
-    <a href="index.html" class="logo">삽교호펜션</a>
+    <a href="index.html" class="logo">
+      🌿 삽교호펜션
+    </a>
     <nav class="nav-menu">
+      <a href="intro.html" data-text="소개">소개</a>
+      <a href="room.html" data-text="객실">객실</a>
+      <a href="reservation.html" data-text="예약">예약</a>
+      <a href="community.html" data-text="SNS">SNS</a>
+    </nav>
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <nav class="mobile-nav">
       <a href="intro.html">소개</a>
       <a href="room.html">객실</a>
       <a href="reservation.html">예약</a>
@@ -9,3 +26,51 @@
     </nav>
   </div>
 </header>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const header = document.querySelector('.site-header');
+    
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', function() {
+        toggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      });
+      
+      // Close mobile menu when clicking on links
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          toggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    }
+    
+    // Header scroll effect
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', function() {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Hide/show header on scroll
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>

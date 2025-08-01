@@ -3,42 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>삽교호 펜션</title>
+  <title>삽교호 펜션 - 자연 속 프리미엄 힐링 스테이</title>
+  <meta name="description" content="삽교호의 아름다운 자연 속에서 특별한 휴식을 경험하세요. 프리미엄 객실과 최고의 서비스로 잊지 못할 추억을 만들어드립니다.">
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
   <div id="header"></div>
+  
+  <!-- Hero Section -->
   <main>
-    <div class="hero">
-      <div class="hero-text">자연 속 힐링, 삽교호 펜션에 오신 걸 환영합니다</div>
-    </div>
+    <section class="hero">
+      <div class="hero-text">
+        자연 속 힐링, 삽교호 펜션에서<br>
+        <span style="color: var(--accent-gold); font-weight: 800;">특별한 순간</span>을 만나세요
+      </div>
+    </section>
+
+    <!-- Features Section -->
     <section class="menu-section">
       <h2>펜션 이용 안내</h2>
+      <p class="section-subtitle">삽교호의 아름다운 자연과 함께하는 프리미엄 펜션 서비스</p>
+      
       <div class="menu-cards">
         <a href="room.html" class="menu-card">
-          <img src="images/room-icon.png" alt="객실안내" />
+          <div class="card-icon">
+            <img src="images/room-icon.png" alt="객실안내" />
+          </div>
           <div class="menu-card-title">객실 소개</div>
+          <p class="card-description">아늑하고 편안한 객실에서<br>자연의 평온함을 느껴보세요</p>
+          <div class="card-arrow">→</div>
         </a>
+        
         <a href="reservation.html" class="menu-card">
-          <img src="images/reservation-icon.png" alt="예약안내" />
+          <div class="card-icon">
+            <img src="images/reservation-icon.png" alt="예약안내" />
+          </div>
           <div class="menu-card-title">예약 문의</div>
+          <p class="card-description">간편한 예약 시스템으로<br>편리하게 예약하세요</p>
+          <div class="card-arrow">→</div>
         </a>
+        
         <a href="community.html" class="menu-card">
-          <img src="images/community-icon.png" alt="커뮤니티" />
+          <div class="card-icon">
+            <img src="images/community-icon.png" alt="커뮤니티" />
+          </div>
           <div class="menu-card-title">SNS 후기</div>
+          <p class="card-description">다른 고객들의 생생한<br>후기를 확인해보세요</p>
+          <div class="card-arrow">→</div>
         </a>
       </div>
     </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-content">
+          <h2>삽교호 펜션이 특별한 이유</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🌿</div>
+              <h3>자연 친화적 환경</h3>
+              <p>삽교호의 맑은 공기와 아름다운 자연 속에서 진정한 휴식을 경험하세요</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏡</div>
+              <h3>프리미엄 시설</h3>
+              <p>현대적이고 깔끔한 인테리어와 최신 편의시설로 편안한 숙박을 제공합니다</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⭐</div>
+              <h3>맞춤형 서비스</h3>
+              <p>고객 한 분 한 분의 특별한 순간을 위해 정성스러운 서비스를 제공합니다</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📍</div>
+              <h3>완벽한 위치</h3>
+              <p>접근성이 좋으면서도 조용한 환경으로 도심 속 오아시스를 경험하세요</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>지금 바로 예약하고<br>특별한 경험을 시작하세요</h2>
+        <p>삽교호 펜션에서 잊지 못할 추억을 만들어보세요</p>
+        <div class="cta-buttons">
+          <a href="reservation.html" class="btn btn-primary">예약 문의하기</a>
+          <a href="room.html" class="btn btn-secondary">객실 둘러보기</a>
+        </div>
+      </div>
+    </section>
   </main>
+  
   <div id="footer"></div>
+  
   <script>
+    // Header/Footer 로드
     fetch('components/header.html')
       .then(res => res.text())
       .then(data => document.getElementById('header').innerHTML = data);
     fetch('components/footer.html')
       .then(res => res.text())
       .then(data => document.getElementById('footer').innerHTML = data);
+
+    // 스크롤 애니메이션
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // 페이지 로드 후 애니메이션 적용
+    document.addEventListener('DOMContentLoaded', () => {
+      const animateElements = document.querySelectorAll('.menu-card, .feature-item, .cta-content');
+      animateElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease-out';
+        el.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(el);
+      });
+    });
   </script>
 </body>
 </html>
