@@ -5,32 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>예약 안내 - 삽교호 펜션</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    .section { max-width: 800px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .button { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #7ca328; color: white; text-decoration: none; border-radius: 5px; }
+    .page-container { padding-top: 80px; }
+    section { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .btn { display: inline-block; padding: 10px 20px; background: #7ca328; color: white; text-decoration: none; border-radius: 6px; margin-top: 10px; }
   </style>
 </head>
 <body>
+  <div id="header"></div>
 
-<div id="header"></div>
+  <div class="page-container">
+    <section>
+      <h2>예약 방법</h2>
+      <p>전화 또는 카카오톡을 통해 예약하실 수 있습니다.</p>
+      <a class="btn" href="tel:01012345678">📞 전화: 010-1234-5678</a><br>
+      <a class="btn" href="https://pf.kakao.com/_your_channel_id" target="_blank">💬 카카오톡 예약</a>
+    </section>
+  </div>
 
-<div class="section">
-  <h2>예약 방법</h2>
-  <p>전화 또는 카카오톡을 통해 간편하게 예약하실 수 있습니다.</p>
-  <a href="tel:01012345678" class="button">📞 전화: 010-1234-5678</a><br>
-  <a href="https://pf.kakao.com/_your_channel_id" class="button" target="_blank">💬 카카오톡 예약</a>
-</div>
-
-<div class="section">
-  <h2>이용 요금</h2>
-  <p>패밀리룸: ₩120,000 / 1박<br>커플룸: ₩80,000 / 1박<br>* 성수기 요금 별도 안내</p>
-</div>
-
-<div id="footer"></div>
-<script>
-  fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
-  fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
-</script>
-
+  <div id="footer"></div>
+  <script>
+    fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+    fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+  </script>
 </body>
 </html>
