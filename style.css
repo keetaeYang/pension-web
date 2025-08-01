@@ -1021,7 +1021,7 @@ a {
     gap: var(--space-2xl);
   }
   
-  .address-info {
+  .pension-info {
     gap: var(--space-lg);
   }
   
@@ -1952,8 +1952,8 @@ body.menu-open {
 .footer-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  padding: var(--space-3xl) var(--space-lg);
+  gap: var(--space-xl);
+  padding: var(--space-lg) var(--space-lg);
 }
 
 .footer-section h4 {
@@ -1976,36 +1976,38 @@ body.menu-open {
 }
 
 .footer-logo h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   color: var(--neutral-100);
 }
 
 /* Business Info Styles */
 .business-info {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
 }
 
 .business-detail {
   display: flex;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   align-items: center;
 }
 
 .business-detail .label {
   font-weight: 600;
-  color: var(--accent-light);
-  min-width: 100px;
-  margin-right: var(--space-md);
+  color: var(--neutral-100);
+  min-width: 80px;
+  margin-right: var(--space-sm);
+  font-size: 0.9rem;
 }
 
 .business-detail .value {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--neutral-100);
+  font-size: 0.9rem;
 }
 
 .business-detail .value a {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--neutral-100);
   text-decoration: none;
   transition: all var(--transition-base);
 }
@@ -2014,11 +2016,34 @@ body.menu-open {
   color: var(--accent-light);
 }
 
-/* Address Info Styles */
-.address-info {
+/* Pension Info Styles */
+.pension-info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
+}
+
+.pension-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.pension-group h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--neutral-100);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.pension-group p {
+  font-size: 0.95rem;
+  color: var(--neutral-200);
+  margin: 0;
+  padding-left: var(--space-lg);
 }
 
 .address-group h4 {
@@ -2143,7 +2168,7 @@ body.menu-open {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -2159,7 +2184,7 @@ body.menu-open {
 
 .footer-bottom p {
   margin: 0;
-  opacity: 0.8;
+  color: var(--neutral-100);
   font-size: 0.9rem;
 }
 
@@ -3107,18 +3132,11 @@ h1::after {
   margin: 0 auto;
 }
 
-.address-info h3,
 .transport-info h3 {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--primary-blue);
   margin-bottom: var(--space-md);
-}
-
-.address-info p {
-  font-size: 1.1rem;
-  color: var(--neutral-700);
-  margin-bottom: var(--space-sm);
 }
 
 .location-note {
