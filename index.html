@@ -1,167 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>우리 펜션</title>
-
-  <!-- Lightbox2 CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삽교호 펜션</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; font-family: sans-serif; scroll-behavior: smooth; }
-
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(0,0,0,0.5);
-      color: white;
-      padding: 1rem 2rem;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .hero {
-      height: 100vh;
-      background: url('images/hero.jpg') center center / cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 1px 1px 3px #000;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      padding: 0 20px;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .menu-section {
-      background: #f5f5f5;
-      padding: 40px 0;
-    }
-
-    .menu-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .menu-item {
-      text-align: center;
-      text-decoration: none;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .menu-item img {
-      width: 60px;
-      margin-bottom: 10px;
-    }
-
-    .menu-item span {
-      display: block;
-      color: #7ca328;
-      font-weight: bold;
-    }
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    .hero { height: 100vh; background: url('images/hero.jpg') center center / cover no-repeat; color: white; display: flex; justify-content: center; align-items: center; text-align: center; text-shadow: 1px 1px 3px #000; }
+    .hero h1 { font-size: 3rem; padding: 0 20px; }
+    .section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .gallery img { width: 100%; border-radius: 10px; transition: transform 0.3s; cursor: pointer; }
+    .gallery img:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
 
-<header>
-  <div>🌿 우리 펜션</div>
-  <nav>
-    <a href="intro.html">소개</a>
-    <a href="room.html">객실</a>
-    <a href="reservation.html">예약</a>
-    <a href="community.html">SNS</a>
-  </nav>
-</header>
+<div id="header"></div>
 
 <div class="hero">
-  <h1>자연 속 힐링, 우리 펜션에 오신 걸 환영합니다</h1>
+  <h1>자연 속 힐링, 삽교호 펜션에 오신 걸 환영합니다</h1>
 </div>
 
-<!-- 메뉴 섹션 -->
-<section class="menu-section">
-  <div class="menu-container">
-    <a href="room.html" class="menu-item">
-      <img src="images/room-icon.png" alt="객실안내">
-      객실안내<br><span>Room</span>
-    </a>
-    <a href="reservation.html" class="menu-item">
-      <img src="images/reservation-icon.png" alt="예약안내">
-      예약안내<br><span>Reservation</span>
-    </a>
-    <a href="community.html" class="menu-item">
-      <img src="images/community-icon.png" alt="커뮤니티">
-      커뮤니티<br><span>Community</span>
-    </a>
-  </div>
-</section>
-
-<section id="intro">
+<div class="section" id="intro">
   <h2>펜션 소개</h2>
-  <p style="text-align:center;">
-    맑은 공기, 깨끗한 자연, 편안한 휴식 공간<br>
-    가족과 친구들과 함께하는 특별한 하루를 위한 공간입니다.
-  </p>
-</section>
+  <p style="text-align:center;">맑은 공기, 깨끗한 자연, 편안한 휴식 공간</p>
+</div>
 
-<section id="gallery">
-  <h2>갤러리</h2>
+<div class="section" id="gallery">
+  <h2>객실 미리보기</h2>
   <div class="gallery">
-    <a href="images/photo1.jpg" data-lightbox="gallery"><img src="images/photo1.jpg" alt="갤러리1" /></a>
-    <a href="images/photo2.jpg" data-lightbox="gallery"><img src="images/photo2.jpg" alt="갤러리2" /></a>
-    <a href="images/photo3.jpg" data-lightbox="gallery"><img src="images/photo3.jpg" alt="갤러리3" /></a>
+    <a href="room.html"><img src="images/photo1.jpg" alt="객실 1"></a>
+    <a href="room.html"><img src="images/photo2.jpg" alt="객실 2"></a>
+    <a href="room.html"><img src="images/photo3.jpg" alt="객실 3"></a>
   </div>
-</section>
+</div>
 
-<!-- Lightbox2 JS -->
+<div id="footer"></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+  fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+  fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+</script>
 
 </body>
 </html>

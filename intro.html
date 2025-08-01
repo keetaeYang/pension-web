@@ -1,79 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>펜션 소개 - 우리 펜션</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>소개 - 삽교호 펜션</title>
   <style>
     body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    header {
-      background: #7ca328;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .content {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .intro-section {
-      background: white;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #333;
-    }
-    p {
-      line-height: 1.7;
-      color: #555;
-    }
-    .back-link {
-      display: block;
-      text-align: center;
-      margin: 30px 0;
-      color: #7ca328;
-      font-weight: bold;
-      text-decoration: none;
-    }
+    .section { max-width: 900px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #333; }
+    p { line-height: 1.7; color: #555; }
   </style>
 </head>
 <body>
 
-<header>
-  <div>🌿 우리 펜션</div>
-  <nav>
-    <a href="intro.html">소개</a>
-    <a href="room.html">객실</a>
-    <a href="reservation.html">예약</a>
-    <a href="community.html">SNS</a>
-  </nav>
-</header>
+<div id="header"></div>
 
-<div class="content">
-  <div class="intro-section">
-    <h1>펜션 소개</h1>
-    <p>
-      우리 펜션은 푸른 숲과 맑은 공기 속에서<br>
-      편안한 휴식과 자연의 평온함을 동시에 누릴 수 있는 공간입니다.<br><br>
-
-      객실마다 탁 트인 창문으로 햇살이 가득 들어오고,<br>
-      바베큐장, 산책로, 아이들을 위한 놀이공간도 준비되어 있어<br>
-      가족, 연인, 친구와 함께 힐링하기에 딱 좋은 곳입니다.<br><br>
-
-      사계절 내내 변화하는 자연의 아름다움을 느껴보세요.
-    </p>
-  </div>
+<div class="section">
+  <h1>삽교호 펜션 소개</h1>
+  <p>
+    삽교호의 아름다운 자연 속에서 평온한 휴식을 누릴 수 있는 펜션입니다.<br>
+    사계절 내내 맑은 공기와 햇살 가득한 객실, 가족/연인/친구와 함께하는 최고의 힐링 공간입니다.
+  </p>
 </div>
 
-<a class="back-link" href="index.html">← 메인으로 돌아가기</a>
+<div id="footer"></div>
+<script>
+  fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+  fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+</script>
 
 </body>
 </html>

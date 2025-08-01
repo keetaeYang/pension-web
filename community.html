@@ -1,84 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>커뮤니티 - 우리 펜션</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNS 후기 - 삽교호 펜션</title>
   <style>
     body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    header {
-      background: #7ca328;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .content {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-top: 0;
-      color: #333;
-    }
-    p {
-      color: #555;
-      line-height: 1.6;
-    }
-    .button {
-      display: inline-block;
-      background: #7ca328;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .back-link {
-      display: block;
-      text-align: center;
-      margin: 30px 0;
-      color: #7ca328;
-      font-weight: bold;
-      text-decoration: none;
-    }
+    .section { max-width: 800px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .button { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #7ca328; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px; }
   </style>
 </head>
 <body>
 
-<header>
-  <div>🌿 우리 펜션</div>
-  <nav>
-    <a href="intro.html">소개</a>
-    <a href="room.html">객실</a>
-    <a href="reservation.html">예약</a>
-    <a href="community.html">SNS</a>
-  </nav>
-</header>
+<div id="header"></div>
 
-<div class="content">
-  <div class="box">
-    <h2>후기 남기기</h2>
-    <p>숙박 후 후기를 남겨주시면 운영에 큰 도움이 됩니다!<br>
-    방문하신 블로그나 인스타그램 후기 링크도 공유해주세요.</p>
-    <a class="button" href="https://blog.naver.com/" target="_blank">📎 네이버 블로그</a>
-    <a class="button" href="https://instagram.com/" target="_blank">📷 인스타그램</a>
-  </div>
-
-  <div class="box">
-    <h2>문의 게시판</h2>
-    <p>이용 중 궁금한 점이 있다면 언제든지 문의해주세요.</p>
-    <a class="button" href="mailto:info@yourpension.com">📧 이메일 문의하기</a>
-  </div>
+<div class="section">
+  <h2>후기 남기기</h2>
+  <p>여러분의 블로그/인스타 후기를 공유해주세요!</p>
+  <a href="https://blog.naver.com/" target="_blank" class="button">네이버 블로그</a>
+  <a href="https://instagram.com/" target="_blank" class="button">인스타그램</a>
 </div>
 
-<a class="back-link" href="index.html">← 메인으로 돌아가기</a>
+<div class="section">
+  <h2>문의</h2>
+  <p>문의 사항은 이메일로 보내주세요.</p>
+  <a href="mailto:info@sapgyo-pension.com" class="button">📧 이메일 문의</a>
+</div>
+
+<div id="footer"></div>
+<script>
+  fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+  fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+</script>
 
 </body>
 </html>
