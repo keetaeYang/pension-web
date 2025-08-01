@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>삽교호 펜션</title>
   <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/pretendard.css" rel="stylesheet">
 </head>
 <body>
   <div id="header"></div>
-  <div class="page-container">
+  <main>
     <div class="hero">
-      <img src="images/hero-collage.png" alt="삽교호 펜션"/>
       <div class="hero-text">자연 속 힐링, 삽교호 펜션에 오신 걸 환영합니다</div>
     </div>
+    <section id="intro" class="intro-section">
+      <h2>펜션 소개</h2>
+      <img src="images/photo1.jpg" alt="펜션 소개 사진"/>
+      <p>삽교호 펜션은 아름다운 자연과 함께 편안한 휴식을 제공합니다. 가족, 커플, 친구와 함께 하세요.</p>
+    </section>
     <section class="menu-section">
       <h2>펜션 이용 안내</h2>
       <div class="menu-cards">
@@ -30,13 +35,7 @@
         </a>
       </div>
     </section>
-    <section class="gallery-section">
-      <h2>갤러리</h2>
-      <img src="images/hero-collage.png" alt="갤러리 이미지"/>
-      <img src="images/hero-collage.png" alt="갤러리 이미지"/>
-      <img src="images/hero-collage.png" alt="갤러리 이미지"/>
-    </section>
-  </div>
+  </main>
   <div id="footer"></div>
   <script>
     fetch('components/header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);

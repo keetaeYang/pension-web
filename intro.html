@@ -8,15 +8,13 @@
 </head>
 <body>
   <div id="header"></div>
-  <div class="page-container">
-    <h2>삽교호 펜션 소개</h2>
-    <p>자연 속에서의 평화로운 휴식을 제공하는 삽교호 펜션입니다.</p>
-    <section class="gallery-section">
-      <h3>펜션 전경</h3>
-      <img src="images/hero-collage.png" alt="펜션 전경"/>
-      <img src="images/hero-collage.png" alt="펜션 전경"/>
+  <main class="page-container">
+    <section class="intro-section">
+      <h2>삽교호 펜션 소개</h2>
+      <img src="images/photo2.jpg" alt="소개 사진"/>
+      <p>자연 속 힐링 공간, 삽교호 펜션에 오신 것을 환영합니다. 깨끗하고 아늑한 객실과 다양한 부대시설을 제공합니다.</p>
     </section>
-  </div>
+  </main>
   <div id="footer"></div>
   <script>
     fetch('components/header.html').then(r=>r.text()).then(t=>document.getElementById('header').innerHTML=t);
