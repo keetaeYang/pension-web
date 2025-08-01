@@ -1,45 +1,181 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>삽교호 펜션</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; }
-    .hero { height: 100vh; background: url('images/hero.jpg') center center / cover no-repeat; color: white; display: flex; justify-content: center; align-items: center; text-align: center; text-shadow: 1px 1px 3px #000; }
-    .hero h1 { font-size: 3rem; padding: 0 20px; }
-    .section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-    .gallery img { width: 100%; border-radius: 10px; transition: transform 0.3s; cursor: pointer; }
-    .gallery img:hover { transform: scale(1.05); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Pretendard', sans-serif; background: #fdfdfd; color: #333; }
+
+    .hero {
+      height: 100vh;
+      background: url('images/hero.jpg') center center / cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      max-width: 800px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    /* 메뉴 카드 */
+    .menu-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 30px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.2s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .menu-card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* 객실 카드 */
+    .room-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .room-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+
+    .room-card:hover {
+      transform: scale(1.03);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .room-card .content {
+      padding: 15px;
+    }
+
+    .room-card .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .room-card .price {
+      font-size: 0.95rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
 
 <div id="header"></div>
 
+<!-- Hero -->
 <div class="hero">
   <h1>자연 속 힐링, 삽교호 펜션에 오신 걸 환영합니다</h1>
 </div>
 
-<div class="section" id="intro">
-  <h2>펜션 소개</h2>
-  <p style="text-align:center;">맑은 공기, 깨끗한 자연, 편안한 휴식 공간</p>
-</div>
-
-<div class="section" id="gallery">
-  <h2>객실 미리보기</h2>
-  <div class="gallery">
-    <a href="room.html"><img src="images/photo1.jpg" alt="객실 1"></a>
-    <a href="room.html"><img src="images/photo2.jpg" alt="객실 2"></a>
-    <a href="room.html"><img src="images/photo3.jpg" alt="객실 3"></a>
+<!-- 소개 카드 섹션 -->
+<section>
+  <h2>펜션 이용 안내</h2>
+  <div class="menu-cards">
+    <a href="room.html" class="menu-card">
+      <img src="images/room-icon.png" alt="객실안내">
+      <div class="menu-card-title">객실 소개</div>
+    </a>
+    <a href="reservation.html" class="menu-card">
+      <img src="images/reservation-icon.png" alt="예약안내">
+      <div class="menu-card-title">예약 문의</div>
+    </a>
+    <a href="community.html" class="menu-card">
+      <img src="images/community-icon.png" alt="커뮤니티">
+      <div class="menu-card-title">SNS 후기</div>
+    </a>
   </div>
-</div>
+</section>
+
+<!-- 객실 미리보기 섹션 -->
+<section>
+  <h2>객실 미리보기</h2>
+  <div class="room-gallery">
+    <a href="room.html" class="room-card">
+      <img src="images/room1.jpg" alt="패밀리룸" />
+      <div class="content">
+        <div class="title">패밀리룸</div>
+        <div class="price">₩120,000 / 1박</div>
+      </div>
+    </a>
+    <a href="room.html" class="room-card">
+      <img src="images/room2.jpg" alt="커플룸" />
+      <div class="content">
+        <div class="title">커플룸</div>
+        <div class="price">₩80,000 / 1박</div>
+      </div>
+    </a>
+    <a href="room.html" class="room-card">
+      <img src="images/room3.jpg" alt="온돌룸" />
+      <div class="content">
+        <div class="title">온돌룸</div>
+        <div class="price">₩100,000 / 1박</div>
+      </div>
+    </a>
+  </div>
+</section>
 
 <div id="footer"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 <script>
   fetch('components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
   fetch('components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
