@@ -36,134 +36,6 @@
       </div>
     </section>
 
-    <!-- House Features Section -->
-    <section class="house-features-section">
-      <div class="container">
-        <h2>하우스 특징</h2>
-        <p class="section-subtitle">집처럼 편안하고 아늑한 공간에서 진정한 휴식을 경험하세요</p>
-        
-        <div class="house-grid">
-          <div class="house-card main-feature">
-            <div class="house-icon">🏠</div>
-            <h3>홈스테이 분위기</h3>
-            <div class="house-description">
-              <p>호텔이나 펜션과는 다른 집 같은 편안함</p>
-              <ul>
-                <li>마치 우리 집처럼 편안한 분위기</li>
-                <li>자유롭고 편리한 이용</li>
-                <li>가족 단위 여행객에게 최적</li>
-                <li>장기 체류도 부담 없이</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="house-card">
-            <div class="house-icon">🛏️</div>
-            <h3>편안한 침실</h3>
-            <div class="house-description">
-              <p>집에서 자는 것처럼 편안한 수면</p>
-              <ul>
-                <li>고급 침구류 제공</li>
-                <li>조용하고 아늑한 환경</li>
-                <li>개인 프라이버시 보장</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="house-card">
-            <div class="house-icon">🍳</div>
-            <h3>주방시설 완비</h3>
-            <div class="house-description">
-              <p>집에서처럼 요리하고 식사할 수 있는 공간</p>
-              <ul>
-                <li>냉장고, 전자레인지, 밥솥</li>
-                <li>기본 조리도구 제공</li>
-                <li>식기류 완비</li>
-                <li>가족 식사 공간</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="house-card">
-            <div class="house-icon">📺</div>
-            <h3>거실 공간</h3>
-            <div class="house-description">
-              <p>가족이 함께 모일 수 있는 넓은 거실</p>
-              <ul>
-                <li>편안한 소파와 TV</li>
-                <li>가족 단란 시간</li>
-                <li>아이들 놀이 공간</li>
-                <li>와이파이 완비</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Comfort Section -->
-    <section class="comfort-section">
-      <div class="container">
-        <h2>편안함의 차이</h2>
-        <div class="comfort-comparison">
-          <div class="comfort-item">
-            <div class="comfort-icon">🏨</div>
-            <h3>일반 펜션/호텔</h3>
-            <ul class="comparison-list negative">
-              <li>제한된 이용 시간</li>
-              <li>규칙과 제약이 많음</li>
-              <li>차가운 상업적 분위기</li>
-              <li>개인 취향 반영 어려움</li>
-            </ul>
-          </div>
-          
-          <div class="vs-divider">VS</div>
-          
-          <div class="comfort-item highlight">
-            <div class="comfort-icon">🏠</div>
-            <h3>삽교 하우스</h3>
-            <ul class="comparison-list positive">
-              <li>자유로운 24시간 이용</li>
-              <li>최소한의 규칙, 최대한의 자유</li>
-              <li>따뜻하고 아늑한 집 분위기</li>
-              <li>개인 취향대로 자유로운 이용</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Perfect For Section -->
-    <section class="perfect-for-section">
-      <div class="container">
-        <h2>이런 분들께 추천</h2>
-        <div class="perfect-grid">
-          <div class="perfect-card">
-            <div class="perfect-icon">👨‍👩‍👧‍👦</div>
-            <h3>가족 여행객</h3>
-            <p>아이들과 함께 편안하게 지낼 수 있는 공간이 필요한 가족</p>
-          </div>
-          
-          <div class="perfect-card">
-            <div class="perfect-icon">🎒</div>
-            <h3>장기 체류객</h3>
-            <p>출장이나 장기 여행으로 며칠 동안 머물러야 하는 분들</p>
-          </div>
-          
-          <div class="perfect-card">
-            <div class="perfect-icon">🍳</div>
-            <h3>요리를 즐기는 분</h3>
-            <p>여행지에서도 직접 요리해서 먹고 싶은 분들</p>
-          </div>
-          
-          <div class="perfect-card">
-            <div class="perfect-icon">🏠</div>
-            <h3>홈스테이 경험</h3>
-            <p>호텔보다는 집 같은 분위기를 원하는 분들</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Room Types Section -->
     <section class="room-types-section">
@@ -316,7 +188,7 @@
 
     // 페이지 로드 후 애니메이션 적용
     document.addEventListener('DOMContentLoaded', () => {
-      const animateElements = document.querySelectorAll('.house-card, .perfect-card, .comfort-item, .room-card, .facility-card');
+      const animateElements = document.querySelectorAll('.room-card, .facility-card');
       animateElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
