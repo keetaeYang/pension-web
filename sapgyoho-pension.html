@@ -16,9 +16,12 @@
   <main>
     <section class="hero pension-hero">
       <div class="hero-slideshow">
-        <div class="hero-slide active" style="background-image: url('images/hero1.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('images/hero2.jpg')"></div>
-        <div class="hero-slide" style="background-image: url('images/hero3.jpg')"></div>
+        <div class="hero-slide active" style="background-image: url('images/pension/pensionmain (1).jpg')"></div>
+        <div class="hero-slide" style="background-image: url('images/pension/pensionmain (2).jpg')"></div>
+        <div class="hero-slide" style="background-image: url('images/pension/pensionmain (3).jpg')"></div>
+        <div class="hero-slide" style="background-image: url('images/pension/pensionmain (4).jpg')"></div>
+        <div class="hero-slide" style="background-image: url('images/pension/pensionmain (5).jpg')"></div>
+        <div class="hero-slide" style="background-image: url('images/pension/pensionmain (6).jpg')"></div>
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-text">
@@ -105,6 +108,81 @@
           <div class="pricing-card">
             <h4>추가 인원 요금</h4>
             <p class="price">1인당 3만원</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room Gallery Section -->
+    <section class="room-gallery-section">
+      <div class="container">
+        <h2>객실 갤러리</h2>
+        <p class="section-subtitle">각 객실의 실제 모습을 미리 확인해보세요</p>
+        
+        <div class="room-gallery">
+          <div class="room-card" data-gallery="yellowroom">
+            <div class="room-image">
+              <img src="images/pension/yellowroom/yellowroom (1).jpg" alt="노란 객실" />
+              <div class="room-overlay">
+                <div class="room-info">
+                  <h3>💛 노란 객실</h3>
+                  <p>3-4인 기준 아늑한 공간</p>
+                  <span class="gallery-btn">갤러리 보기 📷</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="room-card" data-gallery="redroom">
+            <div class="room-image">
+              <img src="images/pension/redroom/redroom (1).jpg" alt="빨간 객실" />
+              <div class="room-overlay">
+                <div class="room-info">
+                  <h3>❤️ 빨간 객실</h3>
+                  <p>5-8인 기준 넓은 공간</p>
+                  <span class="gallery-btn">갤러리 보기 📷</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="room-card" data-gallery="whiteroom">
+            <div class="room-image">
+              <img src="images/pension/whiteroom/whiteroom (1).jpg" alt="하얀 객실" />
+              <div class="room-overlay">
+                <div class="room-info">
+                  <h3>🤍 하얀 객실</h3>
+                  <p>10-15인 단체 이용</p>
+                  <span class="gallery-btn">갤러리 보기 📷</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="room-card" data-gallery="swimmingpool">
+            <div class="room-image">
+              <img src="images/pension/swimmingpool/swimmingpool (1).jpg" alt="수영장" />
+              <div class="room-overlay">
+                <div class="room-info">
+                  <h3>🏊‍♂️ 수영장</h3>
+                  <p>시원한 물놀이 공간</p>
+                  <span class="gallery-btn">갤러리 보기 📷</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="room-card" data-gallery="karaoke">
+            <div class="room-image">
+              <img src="images/pension/karaoke/karaoke (1).jpg" alt="노래방" />
+              <div class="room-overlay">
+                <div class="room-info">
+                  <h3>🎤 노래방</h3>
+                  <p>가족, 친구와 함께</p>
+                  <span class="gallery-btn">갤러리 보기 📷</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -268,6 +346,105 @@
         el.style.transition = 'all 0.6s ease-out';
         el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
+      });
+    });
+
+    // 모달 갤러리 기능
+    const galleries = {
+      yellowroom: ['yellowroom (1).jpg', 'yellowroom (2).jpg', 'yellowroom (3).jpg', 'yellowroom (4).jpg', 'yellowroom (5).jpg'],
+      redroom: ['redroom (1).jpg', 'redroom (2).jpg', 'redroom (3).jpg', 'redroom (4).jpg', 'redroom (5).jpg'],
+      whiteroom: ['whiteroom (1).jpg', 'whiteroom (2).jpg', 'whiteroom (3).jpg', 'whiteroom (4).jpg', 'whiteroom (5).jpg'],
+      swimmingpool: ['swimmingpool (1).jpg', 'swimmingpool (2).jpg', 'swimmingpool (3).jpg', 'swimmingpool (4).jpg', 'swimmingpool (5).jpg'],
+      karaoke: ['karaoke (1).jpg', 'karaoke (2).jpg', 'karaoke (3).jpg', 'karaoke (4).jpg', 'karaoke (5).jpg']
+    };
+
+    // 모달 생성
+    function createModal() {
+      const modal = document.createElement('div');
+      modal.className = 'image-modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <div class="modal-navigation">
+            <button class="modal-prev">❮</button>
+            <button class="modal-next">❯</button>
+          </div>
+          <img class="modal-image" src="" alt="">
+          <div class="modal-counter">
+            <span class="current-image">1</span> / <span class="total-images">1</span>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      return modal;
+    }
+
+    // 모달 갤러리 열기
+    function openGallery(galleryType) {
+      const modal = createModal();
+      const images = galleries[galleryType];
+      let currentIndex = 0;
+
+      const modalImg = modal.querySelector('.modal-image');
+      const currentSpan = modal.querySelector('.current-image');
+      const totalSpan = modal.querySelector('.total-images');
+      const closeBtn = modal.querySelector('.modal-close');
+      const prevBtn = modal.querySelector('.modal-prev');
+      const nextBtn = modal.querySelector('.modal-next');
+
+      totalSpan.textContent = images.length;
+
+      function showImage(index) {
+        modalImg.src = `images/pension/${galleryType}/${images[index]}`;
+        currentSpan.textContent = index + 1;
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+
+      // 이벤트 리스너
+      closeBtn.onclick = () => {
+        modal.remove();
+      };
+
+      nextBtn.onclick = nextImage;
+      prevBtn.onclick = prevImage;
+
+      modal.onclick = (e) => {
+        if (e.target === modal) {
+          modal.remove();
+        }
+      };
+
+      // 키보드 이벤트
+      document.addEventListener('keydown', function(e) {
+        if (modal.parentNode) {
+          if (e.key === 'Escape') modal.remove();
+          if (e.key === 'ArrowRight') nextImage();
+          if (e.key === 'ArrowLeft') prevImage();
+        }
+      });
+
+      // 첫 번째 이미지 표시
+      showImage(0);
+      modal.style.display = 'flex';
+    }
+
+    // 룸 카드 클릭 이벤트
+    document.addEventListener('DOMContentLoaded', () => {
+      const roomCards = document.querySelectorAll('.room-card[data-gallery]');
+      roomCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const galleryType = card.getAttribute('data-gallery');
+          openGallery(galleryType);
+        });
       });
     });
   </script>
