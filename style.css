@@ -2023,6 +2023,7 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center; /* 세로 중앙 정렬 */
 }
 
 .pension-inline-group {
