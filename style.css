@@ -3655,6 +3655,7 @@ html {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   transition: all var(--transition-base);
+  position: relative;
   cursor: pointer;
 }
 
@@ -3786,8 +3787,8 @@ html {
   }
 }
 
-/* 갤러리 호버 텍스트 - room-image-header용 */
-.room-image-header .gallery-hover-text {
+/* 갤러리 호버 텍스트 - 카드 하단용 */
+.gallery-hover-text {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3799,19 +3800,23 @@ html {
   font-size: 0.9rem;
   font-weight: 600;
   opacity: 0;
+  transform: translateY(10px);
   transition: all var(--transition-base);
   pointer-events: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
-.room-card:hover .gallery-hover-text {
+.room-card:hover .gallery-hover-text,
+.facility-card:hover .gallery-hover-text {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (max-width: 768px) {
-  .room-image-header .gallery-hover-text {
+  .gallery-hover-text {
     opacity: 1;
     font-size: 0.8rem;
     padding: var(--space-md) var(--space-sm) var(--space-sm);
+    transform: translateY(0);
   }
 }
