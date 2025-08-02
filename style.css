@@ -512,32 +512,7 @@ a {
   gap: var(--space-xl);
 }
 
-.facility-card {
-  background: var(--neutral-100);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-base);
-}
-
-.facility-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-}
-
-.facility-icon {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: var(--space-md);
-}
-
-.facility-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--neutral-800);
-  text-align: center;
-  margin-bottom: var(--space-md);
-}
+/* 구형 facility-card 스타일 제거됨 - 새로운 스타일은 하단에 위치 */
 
 .facility-details p {
   color: var(--neutral-600);
@@ -3711,7 +3686,7 @@ html {
 .info-label {
   font-weight: 600;
   color: var(--neutral-700);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -3719,7 +3694,7 @@ html {
 .info-value {
   color: var(--primary-blue);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   text-align: right;
   flex: 1;
