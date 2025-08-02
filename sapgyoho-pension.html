@@ -43,7 +43,7 @@
         <p class="section-subtitle">3가지 타입의 객실로 다양한 인원 수에 맞춰 운영됩니다</p>
         
         <div class="room-grid">
-          <div class="room-card yellow-room">
+          <div class="room-card yellow-room" data-gallery="yellowroom">
             <div class="room-icon">💛</div>
             <h3>노란 객실</h3>
             <div class="room-capacity">3-4인 기준</div>
@@ -61,9 +61,10 @@
               <span class="feature">에어컨</span>
               <span class="feature">냉장고</span>
             </div>
+            <div class="gallery-hover-text">📷 클릭하여 객실 사진 보기</div>
           </div>
           
-          <div class="room-card red-room">
+          <div class="room-card red-room" data-gallery="redroom">
             <div class="room-icon">❤️</div>
             <h3>빨간 객실</h3>
             <div class="room-capacity">5-8인 기준</div>
@@ -81,9 +82,10 @@
               <span class="feature">밥솥</span>
               <span class="feature">에어프라이어</span>
             </div>
+            <div class="gallery-hover-text">📷 클릭하여 객실 사진 보기</div>
           </div>
           
-          <div class="room-card white-room">
+          <div class="room-card white-room" data-gallery="whiteroom">
             <div class="room-icon">🤍</div>
             <h3>하얀 객실</h3>
             <div class="room-capacity">10-15인 단체 이용 가능</div>
@@ -101,6 +103,7 @@
               <span class="feature">대형 거실</span>
               <span class="feature">다수 침실</span>
             </div>
+            <div class="gallery-hover-text">📷 클릭하여 객실 사진 보기</div>
           </div>
         </div>
         
@@ -113,87 +116,13 @@
       </div>
     </section>
 
-    <!-- Room Gallery Section -->
-    <section class="room-gallery-section">
-      <div class="container">
-        <h2>객실 갤러리</h2>
-        <p class="section-subtitle">각 객실의 실제 모습을 미리 확인해보세요</p>
-        
-        <div class="room-gallery">
-          <div class="room-card" data-gallery="yellowroom">
-            <div class="room-image">
-              <img src="images/pension/yellowroom/yellowroom (1).jpg" alt="노란 객실" />
-              <div class="room-overlay">
-                <div class="room-info">
-                  <h3>💛 노란 객실</h3>
-                  <p>3-4인 기준 아늑한 공간</p>
-                  <span class="gallery-btn">갤러리 보기 📷</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="room-card" data-gallery="redroom">
-            <div class="room-image">
-              <img src="images/pension/redroom/redroom (1).jpg" alt="빨간 객실" />
-              <div class="room-overlay">
-                <div class="room-info">
-                  <h3>❤️ 빨간 객실</h3>
-                  <p>5-8인 기준 넓은 공간</p>
-                  <span class="gallery-btn">갤러리 보기 📷</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="room-card" data-gallery="whiteroom">
-            <div class="room-image">
-              <img src="images/pension/whiteroom/whiteroom (1).jpg" alt="하얀 객실" />
-              <div class="room-overlay">
-                <div class="room-info">
-                  <h3>🤍 하얀 객실</h3>
-                  <p>10-15인 단체 이용</p>
-                  <span class="gallery-btn">갤러리 보기 📷</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="room-card" data-gallery="swimmingpool">
-            <div class="room-image">
-              <img src="images/pension/swimmingpool/swimmingpool (1).jpg" alt="수영장" />
-              <div class="room-overlay">
-                <div class="room-info">
-                  <h3>🏊‍♂️ 수영장</h3>
-                  <p>시원한 물놀이 공간</p>
-                  <span class="gallery-btn">갤러리 보기 📷</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="room-card" data-gallery="karaoke">
-            <div class="room-image">
-              <img src="images/pension/karaoke/karaoke (1).jpg" alt="노래방" />
-              <div class="room-overlay">
-                <div class="room-info">
-                  <h3>🎤 노래방</h3>
-                  <p>가족, 친구와 함께</p>
-                  <span class="gallery-btn">갤러리 보기 📷</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Facilities Section -->
     <section class="facilities-section">
       <div class="container">
         <h2>펜션 시설 안내</h2>
         <div class="facilities-grid">
-          <div class="facility-card">
+          <div class="facility-card" data-gallery="swimmingpool">
             <div class="facility-icon">🏊‍♂️</div>
             <h3>야외 수영장</h3>
             <div class="facility-details">
@@ -208,9 +137,10 @@
               </div>
               <div class="notice">*추후 유료 전환 가능</div>
             </div>
+            <div class="gallery-hover-text">📷 클릭하여 수영장 사진 보기</div>
           </div>
           
-          <div class="facility-card">
+          <div class="facility-card" data-gallery="karaoke">
             <div class="facility-icon">🎤</div>
             <h3>노래방</h3>
             <div class="facility-details">
@@ -224,9 +154,10 @@
                 <span class="info-value">코인식 / 현금 결제만 가능</span>
               </div>
             </div>
+            <div class="gallery-hover-text">📷 클릭하여 노래방 사진 보기</div>
           </div>
           
-          <div class="facility-card">
+          <div class="facility-card" data-gallery="bbq">
             <div class="facility-icon">🍖</div>
             <h3>바베큐장</h3>
             <div class="facility-details">
@@ -240,34 +171,12 @@
                 <span class="info-value">4인 테이블 3만원</span>
               </div>
             </div>
+            <div class="gallery-hover-text">📷 클릭하여 바베큐장 사진 보기</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Location Section -->
-    <section class="location-section">
-      <div class="container">
-        <h2>위치 안내</h2>
-        <div class="location-grid">
-          <div class="location-item">
-            <div class="location-icon">🌊</div>
-            <h3>삽교호 바다</h3>
-            <p>도보 10분 거리</p>
-          </div>
-          <div class="location-item">
-            <div class="location-icon">🎡</div>
-            <h3>대관람차 뷰</h3>
-            <p>객실에서 관람차 전망</p>
-          </div>
-          <div class="location-item">
-            <div class="location-icon">🌾</div>
-            <h3>자연 경관</h3>
-            <p>논밭 앞 자연 풍경</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Reservation Section -->
     <section class="reservation-section">
@@ -351,11 +260,12 @@
 
     // 모달 갤러리 기능
     const galleries = {
-      yellowroom: ['yellowroom (1).jpg', 'yellowroom (2).jpg', 'yellowroom (3).jpg', 'yellowroom (4).jpg', 'yellowroom (5).jpg'],
-      redroom: ['redroom (1).jpg', 'redroom (2).jpg', 'redroom (3).jpg', 'redroom (4).jpg', 'redroom (5).jpg'],
-      whiteroom: ['whiteroom (1).jpg', 'whiteroom (2).jpg', 'whiteroom (3).jpg', 'whiteroom (4).jpg', 'whiteroom (5).jpg'],
-      swimmingpool: ['swimmingpool (1).jpg', 'swimmingpool (2).jpg', 'swimmingpool (3).jpg', 'swimmingpool (4).jpg', 'swimmingpool (5).jpg'],
-      karaoke: ['karaoke (1).jpg', 'karaoke (2).jpg', 'karaoke (3).jpg', 'karaoke (4).jpg', 'karaoke (5).jpg']
+      yellowroom: ['yellowroom (1).jpg', 'yellowroom (1).png', 'yellowroom (4).png', 'yellowroom (5).png'],
+      redroom: ['redroom (1).jpg', 'redroom (2).jpg', 'redroom (3).jpg', 'redroom (4).jpg', 'redroom (5).jpg', 'redroom (6).jpg'],
+      whiteroom: ['whiteroom (1).jpg', 'whiteroom (2).jpg', 'whiteroom (3).jpg', 'whiteroom (4).jpg', 'whiteroom (5).jpg', 'whiteroom (6).jpg', 'whiteroom (7).jpg', 'whiteroom (8).jpg', 'whiteroom (9).jpg', 'whiteroom (10).jpg'],
+      swimmingpool: ['swimmingpool (1).jpg', 'swimmingpool (2).jpg', 'swimmingpool (3).jpg', 'swimmingpool (4).jpg', 'swimmingpool (5).jpg', 'swimmingpool (6).jpg', 'swimmingpool (7).jpg', 'swimmingpool (8).jpg', 'swimmingpool (9).jpg', 'swimmingpool (10).jpg', 'swimmingpool (11).jpg', 'swimmingpool (12).jpg'],
+      karaoke: ['karaoke (1).jpg', 'karaoke (2).jpg'],
+      bbq: ['swimmingpool (1).jpg', 'swimmingpool (2).jpg']
     };
 
     // 모달 생성
@@ -437,10 +347,12 @@
       modal.style.display = 'flex';
     }
 
-    // 룸 카드 클릭 이벤트
+    // 룸 카드와 시설 카드 클릭 이벤트
     document.addEventListener('DOMContentLoaded', () => {
-      const roomCards = document.querySelectorAll('.room-card[data-gallery]');
-      roomCards.forEach(card => {
+      const galleryCards = document.querySelectorAll('.room-card[data-gallery], .facility-card[data-gallery]');
+      galleryCards.forEach(card => {
+        // 호버 효과 추가
+        card.style.cursor = 'pointer';
         card.addEventListener('click', () => {
           const galleryType = card.getAttribute('data-gallery');
           openGallery(galleryType);

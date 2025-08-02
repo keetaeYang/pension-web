@@ -659,10 +659,11 @@ a {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: var(--space-md);
+  color: var(--neutral-100);
 }
 
 .info-card p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--neutral-200);
   line-height: 1.6;
 }
 
@@ -3561,6 +3562,41 @@ html {
   backdrop-filter: blur(10px);
 }
 
+/* 갤러리 호버 텍스트 */
+.gallery-hover-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  text-align: center;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.room-card:hover .gallery-hover-text,
+.facility-card:hover .gallery-hover-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.room-card[data-gallery],
+.facility-card[data-gallery] {
+  position: relative;
+  overflow: hidden;
+}
+
+.room-card[data-gallery]:hover,
+.facility-card[data-gallery]:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
 /* 모바일 반응형 */
 @media (max-width: 768px) {
   .modal-content {
@@ -3589,5 +3625,11 @@ html {
   
   .modal-counter {
     font-size: 16px;
+  }
+  
+  .gallery-hover-text {
+    opacity: 1;
+    font-size: 0.8rem;
+    padding: var(--space-md) var(--space-sm) var(--space-sm);
   }
 }
