@@ -3697,10 +3697,11 @@ html {
 .facility-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: var(--space-sm);
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--neutral-300);
+  gap: var(--space-sm);
 }
 
 .facility-info:last-child {
@@ -3710,13 +3711,19 @@ html {
 .info-label {
   font-weight: 600;
   color: var(--neutral-700);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .info-value {
   color: var(--primary-blue);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: right;
+  flex: 1;
+  min-width: 0;
 }
 
 /* 모바일 반응형 */
