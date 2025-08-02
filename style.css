@@ -96,7 +96,7 @@ a {
 /* Pension Selection Styles */
 .pension-selection {
   padding: calc(80px + var(--space-3xl)) var(--space-md) var(--space-3xl);
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/mainBG1.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/mainBG1.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
