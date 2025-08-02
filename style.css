@@ -3562,16 +3562,15 @@ html {
   backdrop-filter: blur(10px);
 }
 
-/* 새로운 객실 카드 디자인 */
+/* 수정된 객실 카드 디자인 - 상단에만 이미지 */
 .room-card {
-  position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
+  background: var(--neutral-100);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  cursor: pointer;
+  box-shadow: var(--shadow-lg);
   transition: all var(--transition-base);
+  position: relative;
+  cursor: pointer;
 }
 
 .room-card:hover {
@@ -3579,37 +3578,22 @@ html {
   box-shadow: var(--shadow-xl);
 }
 
-.room-overlay {
+.room-image-header {
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.room-card .room-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
-  transition: all var(--transition-base);
-}
-
-.room-card:hover .room-overlay {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-}
-
-.room-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-xl);
-  color: white;
-  z-index: 10;
-}
-
-.room-badge {
-  display: inline-block;
+  top: var(--space-md);
+  left: var(--space-md);
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius-md);
   font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: var(--space-md);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -3632,29 +3616,37 @@ html {
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
 }
 
-.room-content h3 {
-  font-size: 1.4rem;
+.room-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: var(--space-lg) var(--space-xl) var(--space-sm);
+}
+
+.room-capacity {
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: var(--space-sm);
-  color: white;
+  color: var(--neutral-600);
+  margin: 0 var(--space-xl) var(--space-md);
 }
 
-.room-content p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
+.room-description {
+  padding: 0 var(--space-xl) var(--space-xl);
 }
 
-/* 새로운 시설 카드 디자인 */
+.room-description p {
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+/* 수정된 시설 카드 디자인 - 상단에만 이미지 */
 .facility-card {
-  position: relative;
-  height: 250px;
-  background-size: cover;
-  background-position: center;
+  background: var(--neutral-100);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  cursor: pointer;
+  box-shadow: var(--shadow-lg);
   transition: all var(--transition-base);
+  cursor: pointer;
 }
 
 .facility-card:hover {
@@ -3662,41 +3654,53 @@ html {
   box-shadow: var(--shadow-xl);
 }
 
-.facility-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-  transition: all var(--transition-base);
+.facility-image-header {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
 }
 
-.facility-card:hover .facility-overlay {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+.facility-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: var(--space-lg) var(--space-xl) var(--space-md);
 }
 
-.facility-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-xl);
-  color: white;
-  z-index: 10;
+.facility-details {
+  padding: 0 var(--space-xl) var(--space-xl);
 }
 
-.facility-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
+.facility-details p {
+  color: var(--neutral-600);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.facility-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: var(--space-sm);
-  color: white;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--neutral-300);
 }
 
-.facility-content p {
+.facility-info:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--neutral-700);
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
+}
+
+.info-value {
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* 모바일 반응형 */
@@ -3729,146 +3733,37 @@ html {
     font-size: 16px;
   }
   
-  .room-card {
-    height: 250px;
+  .room-image-header {
+    height: 100px;
   }
   
-  .facility-card {
-    height: 200px;
+  .facility-image-header {
+    height: 80px;
   }
   
-  .room-content,
-  .facility-content {
-    padding: var(--space-lg);
+  .room-card h3 {
+    font-size: 1.3rem;
+    margin: var(--space-md) var(--space-lg) var(--space-sm);
+  }
+  
+  .room-capacity {
+    margin: 0 var(--space-lg) var(--space-sm);
+  }
+  
+  .room-description,
+  .facility-details {
+    padding: 0 var(--space-lg) var(--space-lg);
   }
   
   .room-badge {
     font-size: 0.8rem;
     padding: var(--space-xs) var(--space-md);
-  }
-}
-
-/* 새로운 예약 섹션 디자인 */
-.new-reservation-section {
-  padding: var(--space-3xl) 0;
-  background: var(--neutral-200);
-}
-
-.reservation-container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.reservation-container h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-md);
-}
-
-.reservation-subtitle {
-  font-size: 1.1rem;
-  color: var(--neutral-600);
-  margin-bottom: var(--space-3xl);
-  line-height: 1.6;
-}
-
-.contact-box {
-  background: white;
-  border-radius: var(--radius-2xl);
-  padding: var(--space-3xl);
-  box-shadow: var(--shadow-lg);
-  margin-bottom: var(--space-3xl);
-  border: 2px solid var(--primary-light);
-}
-
-.contact-info {
-  margin-bottom: var(--space-xl);
-}
-
-.phone-number {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-md);
-  letter-spacing: 1px;
-}
-
-.contact-note {
-  font-size: 1rem;
-  color: var(--neutral-600);
-  font-weight: 500;
-}
-
-.call-button {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
-  color: white;
-  padding: var(--space-lg) var(--space-3xl);
-  border-radius: var(--radius-xl);
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: all var(--transition-base);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.call-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-  text-decoration: none;
-  color: white;
-}
-
-.reservation-tips {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-xl);
-}
-
-.tip {
-  background: white;
-  padding: var(--space-xl);
-  border-radius: var(--radius-xl);
-  text-align: left;
-  box-shadow: var(--shadow-md);
-  border-left: 4px solid var(--accent-cyan);
-}
-
-.tip strong {
-  display: block;
-  font-size: 1.1rem;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-sm);
-}
-
-.tip span {
-  color: var(--neutral-600);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-  .reservation-container h2 {
-    font-size: 2rem;
+    top: var(--space-sm);
+    left: var(--space-sm);
   }
   
-  .phone-number {
-    font-size: 1.8rem;
-  }
-  
-  .contact-box {
-    padding: var(--space-xl);
-  }
-  
-  .call-button {
-    padding: var(--space-md) var(--space-xl);
-    font-size: 1.1rem;
-  }
-  
-  .reservation-tips {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+  .facility-card h3 {
+    font-size: 1.2rem;
+    margin: var(--space-md) var(--space-lg) var(--space-sm);
   }
 }
