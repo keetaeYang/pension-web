@@ -3525,7 +3525,7 @@ html {
 
 .modal-prev,
 .modal-next {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   color: var(--neutral-800);
   font-size: 24px;
@@ -3535,6 +3535,12 @@ html {
   transition: all var(--transition-base);
   pointer-events: all;
   backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 60px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-prev:hover,
@@ -3578,12 +3584,18 @@ html {
   box-shadow: var(--shadow-xl);
 }
 
+.room-card:hover .room-image-header {
+  transform: scale(1.05);
+}
+
 .room-image-header {
   width: 100%;
   height: 120px;
   background-size: cover;
   background-position: center;
   position: relative;
+  transition: transform var(--transition-base);
+  overflow: hidden;
 }
 
 .room-card .room-badge {
@@ -3654,11 +3666,17 @@ html {
   box-shadow: var(--shadow-xl);
 }
 
+.facility-card:hover .facility-image-header {
+  transform: scale(1.05);
+}
+
 .facility-image-header {
   width: 100%;
   height: 100px;
   background-size: cover;
   background-position: center;
+  transition: transform var(--transition-base);
+  overflow: hidden;
 }
 
 .facility-card h3 {
@@ -3717,16 +3735,19 @@ html {
   
   .modal-prev,
   .modal-next {
-    font-size: 20px;
-    padding: 10px 15px;
+    font-size: 18px;
+    padding: 12px 16px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
   }
   
   .modal-prev {
-    margin-left: -50px;
+    margin-left: -25px;
   }
   
   .modal-next {
-    margin-right: -50px;
+    margin-right: -25px;
   }
   
   .modal-counter {

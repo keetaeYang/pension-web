@@ -305,6 +305,34 @@
         }
       });
 
+      // 터치 제스처 지원
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      modalImg.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      modalImg.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            // 왼쪽으로 스와이프 - 다음 이미지
+            nextImage();
+          } else {
+            // 오른쪽으로 스와이프 - 이전 이미지
+            prevImage();
+          }
+        }
+      }
+
       // 첫 번째 이미지 표시
       showImage(0);
       modal.style.display = 'flex';
