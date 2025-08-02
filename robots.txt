@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sapgyo-pension.com/sitemap.xml
+Sitemap: https://sapgyostay.com/sitemap.xml
