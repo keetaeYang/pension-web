@@ -1955,6 +1955,7 @@ body.menu-open {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   padding: var(--space-lg) var(--space-lg);
+  align-items: start;
 }
 
 .footer-section h4 {
@@ -1985,7 +1986,7 @@ body.menu-open {
 
 /* Business Info Styles */
 .business-info {
-  margin-top: var(--space-md);
+  margin-top: 0;
 }
 
 .business-detail {
@@ -2021,13 +2022,14 @@ body.menu-open {
 .pension-info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  justify-content: flex-start;
 }
 
 .pension-inline-group {
   display: flex;
   gap: var(--space-xl);
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .pension-item {
@@ -2054,6 +2056,7 @@ body.menu-open {
   margin: 0;
   padding-left: var(--space-lg);
 }
+
 
 .pension-group {
   display: flex;
