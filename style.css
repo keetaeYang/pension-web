@@ -3562,39 +3562,141 @@ html {
   backdrop-filter: blur(10px);
 }
 
-/* 갤러리 호버 텍스트 */
-.gallery-hover-text {
+/* 새로운 객실 카드 디자인 */
+.room-card {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.room-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  transition: all var(--transition-base);
+}
+
+.room-card:hover .room-overlay {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+}
+
+.room-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: var(--space-xl);
   color: white;
-  text-align: center;
-  padding: var(--space-lg) var(--space-md) var(--space-md);
+  z-index: 10;
+}
+
+.room-badge {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
   font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.room-badge.yellow {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #333;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.room-badge.red {
+  background: linear-gradient(135deg, #FF6B6B, #EE5A24);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.room-badge.white {
+  background: linear-gradient(135deg, #FFFFFF, #F5F5F5);
+  color: #333;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.room-content h3 {
+  font-size: 1.4rem;
   font-weight: 600;
-  opacity: 0;
-  transition: all var(--transition-base);
-  pointer-events: none;
+  margin-bottom: var(--space-sm);
+  color: white;
 }
 
-.room-card:hover .gallery-hover-text,
-.facility-card:hover .gallery-hover-text {
-  opacity: 1;
-  transform: translateY(0);
+.room-content p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
 }
 
-.room-card[data-gallery],
-.facility-card[data-gallery] {
+/* 새로운 시설 카드 디자인 */
+.facility-card {
   position: relative;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-xl);
   overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
 }
 
-.room-card[data-gallery]:hover,
-.facility-card[data-gallery]:hover {
-  transform: translateY(-5px);
+.facility-card:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
+}
+
+.facility-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  transition: all var(--transition-base);
+}
+
+.facility-card:hover .facility-overlay {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+}
+
+.facility-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-xl);
+  color: white;
+  z-index: 10;
+}
+
+.facility-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: white;
+}
+
+.facility-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
 }
 
 /* 모바일 반응형 */
@@ -3627,9 +3729,146 @@ html {
     font-size: 16px;
   }
   
-  .gallery-hover-text {
-    opacity: 1;
+  .room-card {
+    height: 250px;
+  }
+  
+  .facility-card {
+    height: 200px;
+  }
+  
+  .room-content,
+  .facility-content {
+    padding: var(--space-lg);
+  }
+  
+  .room-badge {
     font-size: 0.8rem;
-    padding: var(--space-md) var(--space-sm) var(--space-sm);
+    padding: var(--space-xs) var(--space-md);
+  }
+}
+
+/* 새로운 예약 섹션 디자인 */
+.new-reservation-section {
+  padding: var(--space-3xl) 0;
+  background: var(--neutral-200);
+}
+
+.reservation-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reservation-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+}
+
+.reservation-subtitle {
+  font-size: 1.1rem;
+  color: var(--neutral-600);
+  margin-bottom: var(--space-3xl);
+  line-height: 1.6;
+}
+
+.contact-box {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-3xl);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-3xl);
+  border: 2px solid var(--primary-light);
+}
+
+.contact-info {
+  margin-bottom: var(--space-xl);
+}
+
+.phone-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+  letter-spacing: 1px;
+}
+
+.contact-note {
+  font-size: 1rem;
+  color: var(--neutral-600);
+  font-weight: 500;
+}
+
+.call-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+  color: white;
+  padding: var(--space-lg) var(--space-3xl);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.call-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.reservation-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+}
+
+.tip {
+  background: white;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  text-align: left;
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.tip strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-sm);
+}
+
+.tip span {
+  color: var(--neutral-600);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .reservation-container h2 {
+    font-size: 2rem;
+  }
+  
+  .phone-number {
+    font-size: 1.8rem;
+  }
+  
+  .contact-box {
+    padding: var(--space-xl);
+  }
+  
+  .call-button {
+    padding: var(--space-md) var(--space-xl);
+    font-size: 1.1rem;
+  }
+  
+  .reservation-tips {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 }
