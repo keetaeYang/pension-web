@@ -2038,7 +2038,6 @@ body.menu-open {
   gap: var(--space-xs);
   flex: 1;
   min-width: 200px;
-  align-items: center; /* 세로 중앙 정렬 */
 }
 
 .pension-item h4 {
